@@ -10,13 +10,13 @@ defmodule TrafficLightStateMachine do
 
   Start by Running
   ```
-  {:ok, pid} = TrafficLightStateMachine.start_link()
+  {:ok, pid} = TrafficLightStateMachine.start_link(nil)
   TrafficLightStateMachine.crosswalk(pid)
   ```
   """
   use GenStateMachine, callback_mode: [:state_functions, :state_enter]
 
-  def start_link() do
+  def start_link(_args) do
     GenStateMachine.start_link(__MODULE__, {:red, 0})
   end
 

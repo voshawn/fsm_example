@@ -15,6 +15,7 @@ defmodule FsmExample.MixProject do
   def application do
     [
       applications: [:gen_state_machine],
+      mod: {TrafficApp.Application, []},
       extra_applications: [:logger]
     ]
   end
